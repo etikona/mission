@@ -6,7 +6,7 @@ import { AuthContext } from '../../Contexts/UserContext';
 const Login = () => {
 
     const [error, setError] = useState('');
-    const{userLogIn, GoogleLogin, GithubLogin} = useContext(AuthContext);
+    const{userLogIn, GoogleLogin} = useContext(AuthContext);
     const navigate = useNavigate();
     const location = useLocation();
     const from = location.state?.from?.pathname || '/';
@@ -54,7 +54,7 @@ const Login = () => {
               <div className='bg-slate-200 text-white p-5'>
          <div className='form-container bg-slate-200'>
             <h3 className='form-title'>Login</h3>
-            <form >
+            <form onSubmit={handleSubmit}>
                 <div className="form-control">
                     <label htmlFor="email">Email</label>
                     <input type="email" name="email" required id="" />
