@@ -1,6 +1,7 @@
 import { Children } from "react";
 import { createBrowserRouter } from "react-router-dom";
 import Main from "../layouts/Main";
+import TaskLayout from "../layouts/TaskLayout";
 import AddTask from "../Pages/AddTask";
 import CompletedTask from "../Pages/CompletedTask";
 import MyTask from "../Pages/MyTask";
@@ -24,17 +25,17 @@ export  const routes = createBrowserRouter([
         {
             path: '/addTask',
             element: <AddTask/>
-        },
-        {
-            path: '/myTask',
-            element: <MyTask/>
-        },
-        {
-            path: '/completedTask',
-            element: <CompletedTask/>
-        },
+           }
     ]
-   
-
+   },
+   {
+    path: '/task',
+    element: <TaskLayout/>,
+    children: [
+        {
+            path:'/task',
+            element: <TaskLayout/>
+        }
+    ]
    }
 ])

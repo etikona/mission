@@ -4,7 +4,7 @@ import { AuthContext } from '../../Contexts/UserContext';
 
 const Navbar = () => {
   const { user, logout } = useContext(AuthContext);
-  console.log(user);
+  
   const handleLogout = () => {
     logout()
       .then(() => { })
@@ -34,11 +34,14 @@ const Navbar = () => {
       <Link to="/addTask" className="block py-2 pl-3 pr-4 text-white  rounded md:bg-transparent  md:p-0 dark:text-white" aria-current="page">Add Task</Link>
     </li>
     <li>
+      <Link to="/task" className="block py-2 pl-3 pr-4 text-white  rounded md:bg-transparent  md:p-0 dark:text-white" aria-current="page">Tasks</Link>
+    </li>
+    {/* <li>
       <Link to="/myTask" className="block py-2 pl-3 pr-4 text-white  rounded md:bg-transparent  md:p-0 dark:text-white" aria-current="page">My Task</Link>
     </li>
     <li>
       <Link to="/completedTask" className="block py-2 pl-3 pr-4 text-white  rounded md:bg-transparent  md:p-0 dark:text-white" aria-current="page">Completed Task</Link>
-    </li>
+    </li> */}
   </>
   return (
     <div>
